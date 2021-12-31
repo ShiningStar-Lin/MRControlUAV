@@ -13,8 +13,19 @@ namespace SpatialPoint
         private static int mPhysicsLayer = 0;
         Vector3 HandRayEndPoint;
         Vector3 spatialPosition;
-        private bool isSpeech = false;
-        
+
+        [SerializeField]
+        private bool isChangePos = false;
+        [SerializeField]
+        private bool isStartFly = false;
+        [SerializeField]
+        private bool isFirstTimeFly = true;
+        [SerializeField]
+        private bool isPlanControlMode = false;
+        [SerializeField]
+        private bool isRayControlMode = true;
+
+        public GameObject planObj;
         void Update()
         {
             GetPositionOnSpatialMap();
@@ -23,12 +34,39 @@ namespace SpatialPoint
         {
             HandRayEndPoint = new Vector3();
             spatialPosition = new Vector3(0,1,0);   //高度固定为1，给无人机一个起升高度
+
+            //只能在对象的当前状态为活跃才能检测到
+            //planObj = GameObject.Find("Airborne_Drone");
         }
 
         public void ChangeSpeech()
         {
-            isSpeech = true;
-            Debug.Log("GetSpeech!");
+            isChangePos = true;
+            Debug.Log("Get Change Position Speech!");
+        }
+
+        public void ChangeFlyStaSpeech()
+        {
+            isStartFly = true;
+            Debug.Log("Get Start Fly Speech!");
+        }
+
+        public void AirPlaneObjectControlSpeech()
+        {
+            isPlanControlMode = true;
+            isRayControlMode = false;
+            planObj.SetActive(true);
+
+            Debug.Log("Get Plane Control Speech!");
+        }
+
+        public void RayControlModeSpeech()
+        {
+            isRayControlMode = true;
+            isPlanControlMode = false;
+            planObj.SetActive(false);
+
+            Debug.Log("Get Ray Control Speech!");
         }
         /// <summary>
         /// 获取层级掩码
@@ -67,20 +105,55 @@ namespace SpatialPoint
                 return hitInfo.point;
             }*/
 
-            //手部射线
-            if (PointerUtils.TryGetHandRayEndPoint(Handedness.Any, out HandRayEndPoint))
+            if (isFirstTimeFly)
             {
-                if (isSpeech)
-                { 
-                    Debug.Log(HandRayEndPoint.ToString());
-                    spatialPosition = HandRayEndPoint;
-                    isSpeech = false;
-                }
-
+                //对应无人机坐标
+                spatialPosition.z = 0;
+                spatialPosition.x = 0;
+                spatialPosition.y = -50.0f;
+                Debug.Log("X : " + spatialPosition.z.ToString() +
+                        "Y : " + spatialPosition.x.ToString() +
+                        "Z : " + spatialPosition.y.ToString());
+                isFirstTimeFly = false;
+            }
+            else if (isStartFly)
+            {
+                //对应无人机坐标
+                spatialPosition.z = 0;
+                spatialPosition.x = 0;
+                spatialPosition.y = 1.0f;
+                Debug.Log("X : " + spatialPosition.z.ToString() +
+                        "Y : " + spatialPosition.x.ToString() +
+                        "Z : " + spatialPosition.y.ToString());
+                isStartFly = false;
             }
 
+            if(isRayControlMode)
+            {
+                //手部射线
+                if (PointerUtils.TryGetHandRayEndPoint(Handedness.Any, out HandRayEndPoint) && 
+                    isChangePos && !isFirstTimeFly)
+                {
+                    Debug.Log("X : " + HandRayEndPoint.z.ToString() +
+                        "Y : " + HandRayEndPoint.x.ToString() +
+                        "Z : " + HandRayEndPoint.y.ToString());
+                    spatialPosition = HandRayEndPoint;
+                    isChangePos = false;
+                }
+            }
+            else if(isPlanControlMode)
+            {
+                if(isChangePos && !isFirstTimeFly)
+                {
+                    spatialPosition = planObj.transform.position;
+                    Debug.Log("X : " + planObj.transform.position.z.ToString() +
+                        "Y : " + planObj.transform.position.x.ToString() +
+                        "Z : " + planObj.transform.position.y.ToString());
+                    isChangePos = false;
+                }
+            }
+            
             return null;
-
         }
 
         /// <summary>

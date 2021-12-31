@@ -39,7 +39,7 @@ namespace Tramform
         
 
         [SerializeField]
-        private float incrementNum = 1.6f;  //控制球变化后的数据增量
+        private float incrementNum = 3.0f;  //控制球变化后的数据增量
         [SerializeField]
         private float maxMoveUpAndDown;
         private bool isReset = true;

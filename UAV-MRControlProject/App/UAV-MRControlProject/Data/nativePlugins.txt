@@ -1,0 +1,5 @@
+CoarseRelocUW.dll
+MicrosoftGeospatialDecompressionNative.dll
+AzureSpatialAnchors.dll
+
+AudioPluginMsHRTF.dll

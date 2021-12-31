@@ -101,7 +101,7 @@ namespace DTUAVCARS.DTNetWork.SocketNetwork
                                 if (socketSend.Receive(bufRecvData, 0, (int)recvDataLen, SocketFlags.None) == recvDataLen)
                                 {
                                     string check_ctr = CheckRecvData(Encoding.ASCII.GetString(bufRecvData));
-                                    //Debug.Log("data:" + check_ctr + "dd:" + Encoding.ASCII.GetString(bufRecvData));
+                                    Debug.Log("data:" + check_ctr + "dd:" + Encoding.ASCII.GetString(bufRecvData));
                                     if (check_ctr != "")
                                     {
                                         IotMessage recvMessage = JsonUtility.FromJson<IotMessage>(check_ctr);
