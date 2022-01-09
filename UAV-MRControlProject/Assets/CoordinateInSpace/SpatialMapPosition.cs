@@ -5,6 +5,9 @@ using Microsoft.MixedReality.Toolkit.SpatialAwareness;
 using Microsoft.MixedReality.Toolkit;
 using Microsoft.MixedReality.Toolkit.Utilities;
 using Microsoft.MixedReality.Toolkit.Input;
+using DTUAVCARS.DTNetWork.SocketNetwork;
+using Microsoft.MixedReality.Toolkit.UI;
+
 namespace SpatialPoint
 {
     public class SpatialMapPosition:MonoBehaviour
@@ -24,8 +27,14 @@ namespace SpatialPoint
         private bool isPlanControlMode = false;
         [SerializeField]
         private bool isRayControlMode = true;
+        [SerializeField]
+        private bool isGoIntoCenter = false;
 
         public GameObject planObj;
+        public GameObject coordinateCenter;
+        private SocketClient3 socketClientData;
+        private float offset = 5.0f;
+        //private float offset = 1.47f;//坐标中心微调,人的眼镜高度
         void Update()
         {
             GetPositionOnSpatialMap();
@@ -34,9 +43,7 @@ namespace SpatialPoint
         {
             HandRayEndPoint = new Vector3();
             spatialPosition = new Vector3(0,1,0);   //高度固定为1，给无人机一个起升高度
-
-            //只能在对象的当前状态为活跃才能检测到
-            //planObj = GameObject.Find("Airborne_Drone");
+            socketClientData = GameObject.Find("NetworkConnect").GetComponent<SocketClient3>();
         }
 
         public void ChangeSpeech()
@@ -50,6 +57,12 @@ namespace SpatialPoint
             isStartFly = true;
             Debug.Log("Get Start Fly Speech!");
         }
+        
+        public void GoIntoUAVCenterSpeech()
+        {
+            isGoIntoCenter = true;
+            Debug.Log("Get Go Into Center Speech!");
+        }
 
         public void AirPlaneObjectControlSpeech()
         {
@@ -57,6 +70,7 @@ namespace SpatialPoint
             isRayControlMode = false;
             planObj.SetActive(true);
 
+            Destroy(coordinateCenter.GetComponent<ObjectManipulator>());
             Debug.Log("Get Plane Control Speech!");
         }
 
@@ -66,6 +80,7 @@ namespace SpatialPoint
             isPlanControlMode = false;
             planObj.SetActive(false);
 
+            Destroy(coordinateCenter.GetComponent<ObjectManipulator>());
             Debug.Log("Get Ray Control Speech!");
         }
         /// <summary>
@@ -108,26 +123,35 @@ namespace SpatialPoint
             if (isFirstTimeFly)
             {
                 //对应无人机坐标
-                spatialPosition.z = 0;
-                spatialPosition.x = 0;
+                spatialPosition.z = (float)socketClientData.recvData.position_x;
+                spatialPosition.x = (float)socketClientData.recvData.position_y;
                 spatialPosition.y = -50.0f;
                 Debug.Log("X : " + spatialPosition.z.ToString() +
                         "Y : " + spatialPosition.x.ToString() +
                         "Z : " + spatialPosition.y.ToString());
-                isFirstTimeFly = false;
+                
             }
-            else if (isStartFly)
+            
+            if (isStartFly)
             {
+                isFirstTimeFly = false;
                 //对应无人机坐标
-                spatialPosition.z = 0;
-                spatialPosition.x = 0;
+                spatialPosition.z = (float)socketClientData.recvData.position_x;
+                spatialPosition.x = (float)socketClientData.recvData.position_y;
                 spatialPosition.y = 1.0f;
                 Debug.Log("X : " + spatialPosition.z.ToString() +
                         "Y : " + spatialPosition.x.ToString() +
                         "Z : " + spatialPosition.y.ToString());
                 isStartFly = false;
             }
-
+            
+            if(isGoIntoCenter)
+            {
+                spatialPosition.z = 0;
+                spatialPosition.x = 0;
+                spatialPosition.y = 1.0f;
+                isGoIntoCenter = false;
+            }
             if(isRayControlMode)
             {
                 //手部射线
@@ -137,18 +161,38 @@ namespace SpatialPoint
                     Debug.Log("X : " + HandRayEndPoint.z.ToString() +
                         "Y : " + HandRayEndPoint.x.ToString() +
                         "Z : " + HandRayEndPoint.y.ToString());
-                    spatialPosition = HandRayEndPoint;
+                    //spatialPosition = HandRayEndPoint;
+
+                    //转换为无人机的坐标数据
+                    spatialPosition.z = HandRayEndPoint.z - coordinateCenter.transform.position.z;
+                    spatialPosition.x = -(HandRayEndPoint.x - coordinateCenter.transform.position.x);
+                    spatialPosition.y = HandRayEndPoint.y - coordinateCenter.transform.position.y;
+
+                    Debug.Log("spatialPositionX : " + spatialPosition.z.ToString() +
+                        "spatialPositionY : " + spatialPosition.x.ToString() +
+                        "spatialPositionZ : " + spatialPosition.y.ToString());
+
                     isChangePos = false;
                 }
             }
             else if(isPlanControlMode)
             {
-                if(isChangePos && !isFirstTimeFly)
+                if (isChangePos && !isFirstTimeFly)
                 {
-                    spatialPosition = planObj.transform.position;
                     Debug.Log("X : " + planObj.transform.position.z.ToString() +
                         "Y : " + planObj.transform.position.x.ToString() +
                         "Z : " + planObj.transform.position.y.ToString());
+
+                    //spatialPosition = planObj.transform.position;
+                    //转换为无人机的坐标数据
+                    spatialPosition.z = planObj.transform.localPosition.z/ offset;
+                    spatialPosition.x = -planObj.transform.localPosition.x/ offset;
+                    spatialPosition.y = planObj.transform.localPosition.y/ offset;
+
+                    Debug.Log("spatialPositionX : " + spatialPosition.z.ToString() +
+                        "spatialPositionY : " + spatialPosition.x.ToString() +
+                        "spatialPositionZ : " + spatialPosition.y.ToString());
+
                     isChangePos = false;
                 }
             }

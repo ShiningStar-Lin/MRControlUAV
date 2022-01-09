@@ -44,3 +44,10 @@ MonoBehaviour:
       id: 0
       description: None
       axisConstraint: 0
+  - localizationKey: 
+    keyword: "\u5750\u6807\u4E2D\u5FC3"
+    keyCode: 0
+    action:
+      id: 0
+      description: None
+      axisConstraint: 0

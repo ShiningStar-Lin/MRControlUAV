@@ -144,6 +144,8 @@ struct ReverseGeocodeOnClick_t3F86CFCD4BAC4D200B731861CC770447F4CB6470;
 struct ScrollRect_tB16156010F89FFDAAB2127CA878608FD91B9FBEA;
 // System.Net.SocketAddress
 struct SocketAddress_tE8FA33C91254662406767AF97518C235382742D3;
+// DTUAVCARS.DTNetWork.SocketNetwork.SocketClient3
+struct SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A;
 // SpatialPoint.SpatialMapPosition
 struct SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727;
 // System.IO.Stream
@@ -5992,8 +5994,16 @@ public:
 	bool ___isPlanControlMode_10;
 	// System.Boolean SpatialPoint.SpatialMapPosition::isRayControlMode
 	bool ___isRayControlMode_11;
+	// System.Boolean SpatialPoint.SpatialMapPosition::isGoIntoCenter
+	bool ___isGoIntoCenter_12;
 	// UnityEngine.GameObject SpatialPoint.SpatialMapPosition::planObj
-	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * ___planObj_12;
+	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * ___planObj_13;
+	// UnityEngine.GameObject SpatialPoint.SpatialMapPosition::coordinateCenter
+	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * ___coordinateCenter_14;
+	// DTUAVCARS.DTNetWork.SocketNetwork.SocketClient3 SpatialPoint.SpatialMapPosition::socketClientData
+	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A * ___socketClientData_15;
+	// System.Single SpatialPoint.SpatialMapPosition::offset
+	float ___offset_16;
 
 public:
 	inline static int32_t get_offset_of_HandRayEndPoint_5() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___HandRayEndPoint_5)); }
@@ -6052,13 +6062,47 @@ public:
 		___isRayControlMode_11 = value;
 	}
 
-	inline static int32_t get_offset_of_planObj_12() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___planObj_12)); }
-	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * get_planObj_12() const { return ___planObj_12; }
-	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 ** get_address_of_planObj_12() { return &___planObj_12; }
-	inline void set_planObj_12(GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * value)
+	inline static int32_t get_offset_of_isGoIntoCenter_12() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___isGoIntoCenter_12)); }
+	inline bool get_isGoIntoCenter_12() const { return ___isGoIntoCenter_12; }
+	inline bool* get_address_of_isGoIntoCenter_12() { return &___isGoIntoCenter_12; }
+	inline void set_isGoIntoCenter_12(bool value)
 	{
-		___planObj_12 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___planObj_12), (void*)value);
+		___isGoIntoCenter_12 = value;
+	}
+
+	inline static int32_t get_offset_of_planObj_13() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___planObj_13)); }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * get_planObj_13() const { return ___planObj_13; }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 ** get_address_of_planObj_13() { return &___planObj_13; }
+	inline void set_planObj_13(GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * value)
+	{
+		___planObj_13 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___planObj_13), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_coordinateCenter_14() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___coordinateCenter_14)); }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * get_coordinateCenter_14() const { return ___coordinateCenter_14; }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 ** get_address_of_coordinateCenter_14() { return &___coordinateCenter_14; }
+	inline void set_coordinateCenter_14(GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * value)
+	{
+		___coordinateCenter_14 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___coordinateCenter_14), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_socketClientData_15() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___socketClientData_15)); }
+	inline SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A * get_socketClientData_15() const { return ___socketClientData_15; }
+	inline SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A ** get_address_of_socketClientData_15() { return &___socketClientData_15; }
+	inline void set_socketClientData_15(SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A * value)
+	{
+		___socketClientData_15 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___socketClientData_15), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_offset_16() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___offset_16)); }
+	inline float get_offset_16() const { return ___offset_16; }
+	inline float* get_address_of_offset_16() { return &___offset_16; }
+	inline void set_offset_16(float value)
+	{
+		___offset_16 = value;
 	}
 };
 

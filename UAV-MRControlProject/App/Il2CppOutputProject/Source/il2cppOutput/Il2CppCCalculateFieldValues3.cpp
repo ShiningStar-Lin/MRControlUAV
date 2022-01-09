@@ -494,6 +494,8 @@ struct Slider_tBF39A11CC24CBD3F8BD728982ACAEAE43989B51A;
 struct Socket_tD9721140F91BE95BA05B87DD26A855B215D84D09;
 // System.Net.SocketAddress
 struct SocketAddress_tE8FA33C91254662406767AF97518C235382742D3;
+// DTUAVCARS.DTNetWork.SocketNetwork.SocketClient3
+struct SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A;
 // DTUAVCARS.DTNetWork.SocketNetwork.SocketClientBase
 struct SocketClientBase_tBEF30D0754B270BDBB9C00CAD7BC96F7E0EE9324;
 // Photon.Pun.Demo.Asteroids.Spaceship
@@ -556,6 +558,8 @@ struct TramformTest_tE9DEE9C122A9CCA94BF08D8B0B30ED42632C4BEE;
 struct Transform_tA8193BB29D4D2C7EC04918F3ED1816345186C3F1;
 // System.Type
 struct Type_t;
+// DTUAVCARS.DTNetwok.Message.UavLocalPositionMessage
+struct UavLocalPositionMessage_tAB56D75944C787501ED70254DA238884BCEB02E0;
 // System.Net.Sockets.UdpClient
 struct UdpClient_tB1B7578C96A20B6A0B58AC3FD3E1CB469375B920;
 // UnityEngine.Networking.UnityWebRequest
@@ -30710,6 +30714,8 @@ public:
 	bool ___endFlag_18;
 	// System.Int32 DTUAVCARS.DTNetWork.SocketNetwork.SocketClient3::_recvTime
 	int32_t ____recvTime_19;
+	// DTUAVCARS.DTNetwok.Message.UavLocalPositionMessage DTUAVCARS.DTNetWork.SocketNetwork.SocketClient3::recvData
+	UavLocalPositionMessage_tAB56D75944C787501ED70254DA238884BCEB02E0 * ___recvData_20;
 
 public:
 	inline static int32_t get_offset_of_IP_4() { return static_cast<int32_t>(offsetof(SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A, ___IP_4)); }
@@ -30849,6 +30855,15 @@ public:
 	inline void set__recvTime_19(int32_t value)
 	{
 		____recvTime_19 = value;
+	}
+
+	inline static int32_t get_offset_of_recvData_20() { return static_cast<int32_t>(offsetof(SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A, ___recvData_20)); }
+	inline UavLocalPositionMessage_tAB56D75944C787501ED70254DA238884BCEB02E0 * get_recvData_20() const { return ___recvData_20; }
+	inline UavLocalPositionMessage_tAB56D75944C787501ED70254DA238884BCEB02E0 ** get_address_of_recvData_20() { return &___recvData_20; }
+	inline void set_recvData_20(UavLocalPositionMessage_tAB56D75944C787501ED70254DA238884BCEB02E0 * value)
+	{
+		___recvData_20 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___recvData_20), (void*)value);
 	}
 };
 
@@ -31026,8 +31041,16 @@ public:
 	bool ___isPlanControlMode_10;
 	// System.Boolean SpatialPoint.SpatialMapPosition::isRayControlMode
 	bool ___isRayControlMode_11;
+	// System.Boolean SpatialPoint.SpatialMapPosition::isGoIntoCenter
+	bool ___isGoIntoCenter_12;
 	// UnityEngine.GameObject SpatialPoint.SpatialMapPosition::planObj
-	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * ___planObj_12;
+	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * ___planObj_13;
+	// UnityEngine.GameObject SpatialPoint.SpatialMapPosition::coordinateCenter
+	GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * ___coordinateCenter_14;
+	// DTUAVCARS.DTNetWork.SocketNetwork.SocketClient3 SpatialPoint.SpatialMapPosition::socketClientData
+	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A * ___socketClientData_15;
+	// System.Single SpatialPoint.SpatialMapPosition::offset
+	float ___offset_16;
 
 public:
 	inline static int32_t get_offset_of_HandRayEndPoint_5() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___HandRayEndPoint_5)); }
@@ -31086,13 +31109,47 @@ public:
 		___isRayControlMode_11 = value;
 	}
 
-	inline static int32_t get_offset_of_planObj_12() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___planObj_12)); }
-	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * get_planObj_12() const { return ___planObj_12; }
-	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 ** get_address_of_planObj_12() { return &___planObj_12; }
-	inline void set_planObj_12(GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * value)
+	inline static int32_t get_offset_of_isGoIntoCenter_12() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___isGoIntoCenter_12)); }
+	inline bool get_isGoIntoCenter_12() const { return ___isGoIntoCenter_12; }
+	inline bool* get_address_of_isGoIntoCenter_12() { return &___isGoIntoCenter_12; }
+	inline void set_isGoIntoCenter_12(bool value)
 	{
-		___planObj_12 = value;
-		Il2CppCodeGenWriteBarrier((void**)(&___planObj_12), (void*)value);
+		___isGoIntoCenter_12 = value;
+	}
+
+	inline static int32_t get_offset_of_planObj_13() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___planObj_13)); }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * get_planObj_13() const { return ___planObj_13; }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 ** get_address_of_planObj_13() { return &___planObj_13; }
+	inline void set_planObj_13(GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * value)
+	{
+		___planObj_13 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___planObj_13), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_coordinateCenter_14() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___coordinateCenter_14)); }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * get_coordinateCenter_14() const { return ___coordinateCenter_14; }
+	inline GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 ** get_address_of_coordinateCenter_14() { return &___coordinateCenter_14; }
+	inline void set_coordinateCenter_14(GameObject_tC000A2E1A7CF1E10FD7BA08863287C072207C319 * value)
+	{
+		___coordinateCenter_14 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___coordinateCenter_14), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_socketClientData_15() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___socketClientData_15)); }
+	inline SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A * get_socketClientData_15() const { return ___socketClientData_15; }
+	inline SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A ** get_address_of_socketClientData_15() { return &___socketClientData_15; }
+	inline void set_socketClientData_15(SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A * value)
+	{
+		___socketClientData_15 = value;
+		Il2CppCodeGenWriteBarrier((void**)(&___socketClientData_15), (void*)value);
+	}
+
+	inline static int32_t get_offset_of_offset_16() { return static_cast<int32_t>(offsetof(SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727, ___offset_16)); }
+	inline float get_offset_16() const { return ___offset_16; }
+	inline float* get_address_of_offset_16() { return &___offset_16; }
+	inline void set_offset_16(float value)
+	{
+		___offset_16 = value;
 	}
 };
 
@@ -38445,7 +38502,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9184[16] =
 	SocketClient2_tC05CC9CD59C1034617F586C9C741C05F01A2653C::get_offset_of_endFlag_18(),
 	SocketClient2_tC05CC9CD59C1034617F586C9C741C05F01A2653C::get_offset_of__recvTime_19(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9185[16] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9185[17] = 
 {
 	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A::get_offset_of_IP_4(),
 	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A::get_offset_of_Port_5(),
@@ -38463,6 +38520,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9185[16] =
 	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A::get_offset_of_strb_17(),
 	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A::get_offset_of_endFlag_18(),
 	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A::get_offset_of__recvTime_19(),
+	SocketClient3_t4041A7752635ED980EF1401D206A836FBF141F4A::get_offset_of_recvData_20(),
 };
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9186[2] = 
 {
@@ -39445,7 +39503,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9323[2] =
 	PointerEventHandler_t79A571547E819AC7FDB0357C0A6EB55CBC9C4663::get_offset_of_getMapPosition_4(),
 	PointerEventHandler_t79A571547E819AC7FDB0357C0A6EB55CBC9C4663::get_offset_of_hitPoint_5(),
 };
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9324[9] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9324[13] = 
 {
 	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727_StaticFields::get_offset_of_mPhysicsLayer_4(),
 	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_HandRayEndPoint_5(),
@@ -39455,7 +39513,11 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9324[9] =
 	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_isFirstTimeFly_9(),
 	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_isPlanControlMode_10(),
 	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_isRayControlMode_11(),
-	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_planObj_12(),
+	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_isGoIntoCenter_12(),
+	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_planObj_13(),
+	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_coordinateCenter_14(),
+	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_socketClientData_15(),
+	SpatialMapPosition_t3B8A22CF2AE7BCE36988865DC3D55D4B903E6727::get_offset_of_offset_16(),
 };
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable9325[2] = 
 {

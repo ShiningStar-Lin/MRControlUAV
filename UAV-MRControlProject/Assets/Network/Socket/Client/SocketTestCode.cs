@@ -91,7 +91,7 @@ namespace DTUAVCARS.DTNetWork.Lcm.Publisher
                 cureCurrentPoseMessage.Altitude = 1.0f;
 
                 cureCurrentPoseMessage.SpatialPositionX = spatialMapPosition.GetSpatialPosition().z;
-                cureCurrentPoseMessage.SpatialPositionY = -spatialMapPosition.GetSpatialPosition().x;
+                cureCurrentPoseMessage.SpatialPositionY = spatialMapPosition.GetSpatialPosition().x;
                 cureCurrentPoseMessage.SpatialPositionZ = spatialMapPosition.GetSpatialPosition().y;
 
                 msg.MessageData = JsonUtility.ToJson(cureCurrentPoseMessage);

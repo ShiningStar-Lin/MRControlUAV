@@ -33,6 +33,8 @@ namespace DTUAVCARS.DTNetWork.SocketNetwork
         private StructBytes strb = new StructBytes();
         private bool endFlag = false;
         private int _recvTime;
+
+        public UavLocalPositionMessage recvData = new UavLocalPositionMessage();
         private void connect()
         {
             clientBase = new SocketClientBase(IP, Port);
@@ -101,7 +103,7 @@ namespace DTUAVCARS.DTNetWork.SocketNetwork
                                 if (socketSend.Receive(bufRecvData, 0, (int)recvDataLen, SocketFlags.None) == recvDataLen)
                                 {
                                     string check_ctr = CheckRecvData(Encoding.ASCII.GetString(bufRecvData));
-                                    Debug.Log("data:" + check_ctr + "dd:" + Encoding.ASCII.GetString(bufRecvData));
+                                    //Debug.Log("data:" + check_ctr + "dd:" + Encoding.ASCII.GetString(bufRecvData));
                                     if (check_ctr != "")
                                     {
                                         IotMessage recvMessage = JsonUtility.FromJson<IotMessage>(check_ctr);
@@ -112,7 +114,15 @@ namespace DTUAVCARS.DTNetWork.SocketNetwork
                                         _lcmIotMessage.TargetID = recvMessage.TargetID;
                                         PubLcm.Publish(IotMessagePubName, _lcmIotMessage);
                                         //Debug.Log(Encoding.ASCII.GetString(bufRecvData));
-                                        //Debug.Log(_lcmIotMessage.TimeStamp);
+                                        
+                                        if(recvMessage.MessageID == 107 &&
+                                           recvMessage.SourceID == 2)
+                                        {
+                                            recvData = JsonUtility.FromJson<UavLocalPositionMessage>(recvMessage.MessageData);
+                                            /*Debug.Log("Position X :" + recvData.position_x + 
+                                                " Position Y : " + recvData.position_y +
+                                                " Position Z : " + recvData.position_z);*/
+                                        }
                                     }
                                 }
                             }
@@ -206,12 +216,6 @@ namespace DTUAVCARS.DTNetWork.SocketNetwork
                 socketSend.Send(dataFlagBuffer);
                 socketSend.Send(dataSizeBufferInt);
                 socketSend.Send(dataSendBuffer);
-                // Debug.Log("dataLen:"+dataLen);
-                // DateTime centuryBegin = new DateTime(2001, 1, 1);
-                // DateTime currentDate = DateTime.Now;
-                // long elapsedTicks = currentDate.Ticks - centuryBegin.Ticks;
-                // TimeSpan elapsedSpan = new TimeSpan(elapsedTicks);
-                // Debug.Log("recv"+elapsedSpan.TotalSeconds);
             }
         }
     }

@@ -3144,47 +3144,49 @@ extern void SpatialMapPosition_Start_mE9521D503ACF2749C155386CAD5BE49DB3F9140A (
 extern void SpatialMapPosition_ChangeSpeech_mE72342388C64AF122907F8BDE04EB560E28B1824 (void);
 // 0x00000623 System.Void SpatialPoint.SpatialMapPosition::ChangeFlyStaSpeech()
 extern void SpatialMapPosition_ChangeFlyStaSpeech_m071784DCBA0DA1A956821C72460A1E7E806B3A69 (void);
-// 0x00000624 System.Void SpatialPoint.SpatialMapPosition::AirPlaneObjectControlSpeech()
+// 0x00000624 System.Void SpatialPoint.SpatialMapPosition::GoIntoUAVCenterSpeech()
+extern void SpatialMapPosition_GoIntoUAVCenterSpeech_mF5BC02A7B092AB14B27FA3E5D8638D57702736A7 (void);
+// 0x00000625 System.Void SpatialPoint.SpatialMapPosition::AirPlaneObjectControlSpeech()
 extern void SpatialMapPosition_AirPlaneObjectControlSpeech_m8A75A0BC9E9AA365006A37F10A0FDB72F853FC0A (void);
-// 0x00000625 System.Void SpatialPoint.SpatialMapPosition::RayControlModeSpeech()
+// 0x00000626 System.Void SpatialPoint.SpatialMapPosition::RayControlModeSpeech()
 extern void SpatialMapPosition_RayControlModeSpeech_mF864C09FDE67029A9BDFBA5C8E7D01DC104A21F9 (void);
-// 0x00000626 System.Int32 SpatialPoint.SpatialMapPosition::GetSpatialMeshMask()
+// 0x00000627 System.Int32 SpatialPoint.SpatialMapPosition::GetSpatialMeshMask()
 extern void SpatialMapPosition_GetSpatialMeshMask_mD3997C778DC46A0F4336C9EDEACCE796F925C9F8 (void);
-// 0x00000627 System.Nullable`1<UnityEngine.Vector3> SpatialPoint.SpatialMapPosition::GetPositionOnSpatialMap(System.Single)
+// 0x00000628 System.Nullable`1<UnityEngine.Vector3> SpatialPoint.SpatialMapPosition::GetPositionOnSpatialMap(System.Single)
 extern void SpatialMapPosition_GetPositionOnSpatialMap_mDF85528697E0A54E0A15E446D9C3667D1334B719 (void);
-// 0x00000628 System.Void SpatialPoint.SpatialMapPosition::GetPosition(Microsoft.MixedReality.Toolkit.Input.MixedRealityPointerEventData)
+// 0x00000629 System.Void SpatialPoint.SpatialMapPosition::GetPosition(Microsoft.MixedReality.Toolkit.Input.MixedRealityPointerEventData)
 extern void SpatialMapPosition_GetPosition_m279FEFBF99CEEBAE76EE1814613089AC2F1FCEDF (void);
-// 0x00000629 UnityEngine.Vector3 SpatialPoint.SpatialMapPosition::GetSpatialPosition()
+// 0x0000062A UnityEngine.Vector3 SpatialPoint.SpatialMapPosition::GetSpatialPosition()
 extern void SpatialMapPosition_GetSpatialPosition_m5D6454EEA1F93F79B5B04D2C31008D4CCACEA8C0 (void);
-// 0x0000062A System.Void SpatialPoint.SpatialMapPosition::.ctor()
+// 0x0000062B System.Void SpatialPoint.SpatialMapPosition::.ctor()
 extern void SpatialMapPosition__ctor_m61AF32A26167EEB06D5EB4768A2455F94B4025C9 (void);
-// 0x0000062B System.Void SpatialPoint.SpatialMapPosition::.cctor()
+// 0x0000062C System.Void SpatialPoint.SpatialMapPosition::.cctor()
 extern void SpatialMapPosition__cctor_m70B2C4B91708F28C88A420E2AD2E667ECA35C650 (void);
-// 0x0000062C System.Void SpatialPoint.SpatialWareness::OnEnable()
+// 0x0000062D System.Void SpatialPoint.SpatialWareness::OnEnable()
 extern void SpatialWareness_OnEnable_m08824C66CDE21ACB53451FA39C0D8768D1882A4C (void);
-// 0x0000062D System.Void SpatialPoint.SpatialWareness::OnDestroy()
+// 0x0000062E System.Void SpatialPoint.SpatialWareness::OnDestroy()
 extern void SpatialWareness_OnDestroy_m2D2A4A2A5F51F70762E32E2A5A20A2C2A50C0B45 (void);
-// 0x0000062E System.Void SpatialPoint.SpatialWareness::RegisterEventHandlers()
+// 0x0000062F System.Void SpatialPoint.SpatialWareness::RegisterEventHandlers()
 extern void SpatialWareness_RegisterEventHandlers_mCB19AE12D4F6021343799B72CAE6B0DA4B07F91C (void);
-// 0x0000062F System.Void SpatialPoint.SpatialWareness::UnregisterEventHandlers()
+// 0x00000630 System.Void SpatialPoint.SpatialWareness::UnregisterEventHandlers()
 extern void SpatialWareness_UnregisterEventHandlers_m12966406F1E866226B4A3BB1ED64792097874D81 (void);
-// 0x00000630 System.Void SpatialPoint.SpatialWareness::OnObservationAdded(Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessEventData`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.SpatialAwarenessMeshObject>)
+// 0x00000631 System.Void SpatialPoint.SpatialWareness::OnObservationAdded(Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessEventData`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.SpatialAwarenessMeshObject>)
 extern void SpatialWareness_OnObservationAdded_m94FDB927DE05EEABD1AC1955DA843C79FE0F428A (void);
-// 0x00000631 System.Void SpatialPoint.SpatialWareness::OnObservationUpdated(Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessEventData`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.SpatialAwarenessMeshObject>)
+// 0x00000632 System.Void SpatialPoint.SpatialWareness::OnObservationUpdated(Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessEventData`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.SpatialAwarenessMeshObject>)
 extern void SpatialWareness_OnObservationUpdated_m4BEF825EE0193663A4E0456BC5837FAC4EA9B348 (void);
-// 0x00000632 System.Void SpatialPoint.SpatialWareness::OnObservationRemoved(Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessEventData`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.SpatialAwarenessMeshObject>)
+// 0x00000633 System.Void SpatialPoint.SpatialWareness::OnObservationRemoved(Microsoft.MixedReality.Toolkit.SpatialAwareness.MixedRealitySpatialAwarenessEventData`1<Microsoft.MixedReality.Toolkit.SpatialAwareness.SpatialAwarenessMeshObject>)
 extern void SpatialWareness_OnObservationRemoved_m02AC3B6507C0D3A6FD596C37723924111F3CAC49 (void);
-// 0x00000633 System.Void SpatialPoint.SpatialWareness::HideSpatialMesh()
+// 0x00000634 System.Void SpatialPoint.SpatialWareness::HideSpatialMesh()
 extern void SpatialWareness_HideSpatialMesh_m5DD06789A95E078901748723921D622E280045F5 (void);
-// 0x00000634 System.Void SpatialPoint.SpatialWareness::ShowSpatialMesh()
+// 0x00000635 System.Void SpatialPoint.SpatialWareness::ShowSpatialMesh()
 extern void SpatialWareness_ShowSpatialMesh_m51D9067F69BEB2197263DB70B5BF6748B90F4AD1 (void);
-// 0x00000635 System.Void SpatialPoint.SpatialWareness::EnableSpatialAwareness()
+// 0x00000636 System.Void SpatialPoint.SpatialWareness::EnableSpatialAwareness()
 extern void SpatialWareness_EnableSpatialAwareness_m1F7F33FA7A8401190BE8D17014988AF791E9600F (void);
-// 0x00000636 System.Void SpatialPoint.SpatialWareness::DisableSpatialAwareness()
+// 0x00000637 System.Void SpatialPoint.SpatialWareness::DisableSpatialAwareness()
 extern void SpatialWareness_DisableSpatialAwareness_mA02561B2B708ECCCF51337F43125B46EAF75E95C (void);
-// 0x00000637 System.Void SpatialPoint.SpatialWareness::.ctor()
+// 0x00000638 System.Void SpatialPoint.SpatialWareness::.ctor()
 extern void SpatialWareness__ctor_m5A664AC9036E9637E7EDA480E3739881CD5A69D5 (void);
-static Il2CppMethodPointer s_methodPointers[1591] = 
+static Il2CppMethodPointer s_methodPointers[1592] = 
 {
 	MoveTest_Start_mA663FAD6FF91E81FB075F751932FDFB68D359CCF,
 	MoveTest_ButtonControlOff_m7ADEEE8DD733823FBBE64B28BBFDD864980F48D5,
@@ -4757,6 +4759,7 @@ static Il2CppMethodPointer s_methodPointers[1591] =
 	SpatialMapPosition_Start_mE9521D503ACF2749C155386CAD5BE49DB3F9140A,
 	SpatialMapPosition_ChangeSpeech_mE72342388C64AF122907F8BDE04EB560E28B1824,
 	SpatialMapPosition_ChangeFlyStaSpeech_m071784DCBA0DA1A956821C72460A1E7E806B3A69,
+	SpatialMapPosition_GoIntoUAVCenterSpeech_mF5BC02A7B092AB14B27FA3E5D8638D57702736A7,
 	SpatialMapPosition_AirPlaneObjectControlSpeech_m8A75A0BC9E9AA365006A37F10A0FDB72F853FC0A,
 	SpatialMapPosition_RayControlModeSpeech_mF864C09FDE67029A9BDFBA5C8E7D01DC104A21F9,
 	SpatialMapPosition_GetSpatialMeshMask_mD3997C778DC46A0F4336C9EDEACCE796F925C9F8,
@@ -4778,7 +4781,7 @@ static Il2CppMethodPointer s_methodPointers[1591] =
 	SpatialWareness_DisableSpatialAwareness_mA02561B2B708ECCCF51337F43125B46EAF75E95C,
 	SpatialWareness__ctor_m5A664AC9036E9637E7EDA480E3739881CD5A69D5,
 };
-static const int32_t s_InvokerIndices[1591] = 
+static const int32_t s_InvokerIndices[1592] = 
 {
 	6898,
 	6898,
@@ -6353,6 +6356,7 @@ static const int32_t s_InvokerIndices[1591] =
 	6898,
 	6898,
 	6898,
+	6898,
 	9861,
 	3518,
 	5683,
@@ -6379,8 +6383,8 @@ static const Il2CppTokenRangePair s_rgctxIndices[2] =
 };
 static const Il2CppRGCTXDefinition s_rgctxValues[4] = 
 {
-	{ (Il2CppRGCTXDataType)3, 77042 },
 	{ (Il2CppRGCTXDataType)3, 77044 },
+	{ (Il2CppRGCTXDataType)3, 77046 },
 	{ (Il2CppRGCTXDataType)1, 476 },
 	{ (Il2CppRGCTXDataType)2, 476 },
 };
@@ -6389,7 +6393,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	1591,
+	1592,
 	s_methodPointers,
 	0,
 	NULL,
