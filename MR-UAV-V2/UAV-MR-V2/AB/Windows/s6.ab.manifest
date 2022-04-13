@@ -1,0 +1,35 @@
+ManifestFileVersion: 0
+CRC: 2264022381
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 93cce3d719a0227e6a2e3a32ef6be61e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1db99bb38a1c38e11e5c5dfb7037c6f4
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Model/Perfebs/s6-TheModule.prefab
+Dependencies: []

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Resource>
+ 
+    <ResPath>
+    <Platform>Android</Platform>
+    <AbPath>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AB/Android/</AbPath>
+	<PicPath>https://mrplatform.oss-cn-shanghai.aliyuncs.com/Pics</PicPath> 
+	<ABList>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AbList.xml</ABList>
+  </ResPath>
+
+  <ResPath>
+    <Platform>WSA</Platform>
+    <AbPath>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AB/WSA</AbPath> 
+	<PicPath>https://mrplatform.oss-cn-shanghai.aliyuncs.com/Pics</PicPath> 
+	<ABList>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AbList.xml</ABList>
+  </ResPath>
+
+	<ResPath>
+		<Platform>Windows</Platform>
+		<AbPath>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AB/Windows</AbPath>
+		<PicPath>https://mrplatform.oss-cn-shanghai.aliyuncs.com/Pics</PicPath>
+		<ABList>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AbList.xml</ABList>
+	</ResPath>
+
+	<ResPath>
+		<Platform>IOS</Platform>
+		<AbPath>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AB/IOS</AbPath>
+		<PicPath>https://mrplatform.oss-cn-shanghai.aliyuncs.com/Pics</PicPath>
+		<ABList>https://assetbundlelin.oss-cn-guangzhou.aliyuncs.com/AbList.xml</ABList>
+	</ResPath>
+ </Resource>

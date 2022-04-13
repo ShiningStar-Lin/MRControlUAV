@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 3883698266
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e3364844990b15422c12e5247f9edce7
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2ca7fdffd60fa79c953a87070f188e2c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Model/Perfebs/s5-Robot_Soldier_Red.prefab
+Dependencies: []

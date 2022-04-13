@@ -1,0 +1,28 @@
+ManifestFileVersion: 0
+CRC: 551084899
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: s1.ab
+      Dependencies: {}
+    Info_1:
+      Name: s2.ab
+      Dependencies: {}
+    Info_2:
+      Name: s3.ab
+      Dependencies: {}
+    Info_3:
+      Name: s4.ab
+      Dependencies: {}
+    Info_4:
+      Name: s5.ab
+      Dependencies: {}
+    Info_5:
+      Name: s7.ab
+      Dependencies: {}
+    Info_6:
+      Name: s8.ab
+      Dependencies: {}
+    Info_7:
+      Name: s9.ab
+      Dependencies: {}

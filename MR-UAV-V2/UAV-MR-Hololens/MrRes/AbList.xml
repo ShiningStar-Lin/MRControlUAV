@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<Abs>
+
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1001</AbID>
+  <TitleName>火星车</TitleName>
+  <Desc>火星车</Desc>
+  <AbFileName>s1.ab</AbFileName>
+  <ObjName>s1-Buggy</ObjName>
+  <AbPicFileName>s1.jpg</AbPicFileName> 
+  </AB>
+ 
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1002</AbID>
+  <TitleName>狐狸</TitleName>
+  <Desc>狐狸</Desc>
+  <AbFileName>s2.ab</AbFileName>
+  <ObjName>s2-Fox</ObjName>
+  <AbPicFileName>s2.jpg</AbPicFileName> 
+  </AB>
+ 
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1003</AbID>
+  <TitleName>火星控制车</TitleName>
+  <Desc>火星控制车</Desc>
+  <AbFileName>s3.ab</AbFileName>
+  <ObjName>s3-MarsCuriosityRover</ObjName>
+  <AbPicFileName>s3.jpg</AbPicFileName> 
+  </AB>
+ 
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1004</AbID>
+  <TitleName>机器人凯尔</TitleName>
+  <Desc>机器人凯尔</Desc>
+  <AbFileName>s4.ab</AbFileName>
+  <ObjName>s4-Robot Kyle</ObjName>
+  <AbPicFileName>s4.jpg</AbPicFileName> 
+  </AB>
+	
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1005</AbID>
+  <TitleName>机器人军人</TitleName>
+  <Desc>机器人军人</Desc>
+  <AbFileName>s5.ab</AbFileName>
+  <ObjName>s5-Robot_Soldier_Red</ObjName>
+  <AbPicFileName>s5.jpg</AbPicFileName> 
+  </AB>
+
+ 
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1007</AbID>
+  <TitleName>无人机一号</TitleName>
+  <Desc>无人机一号</Desc>
+  <AbFileName>s7.ab</AbFileName>
+  <ObjName>s7-UAV-Trident</ObjName>
+  <AbPicFileName>s7.jpg</AbPicFileName> 
+  </AB>
+ 
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1008</AbID>
+  <TitleName>无人机二号</TitleName>
+  <Desc>无人机二号</Desc>
+  <AbFileName>s8.ab</AbFileName>
+  <ObjName>s8-UAV</ObjName>
+  <AbPicFileName>s8.jpg</AbPicFileName> 
+ </AB>
+ 
+  <AB>
+  <AbType>1</AbType>
+  <AbID>1009</AbID>
+  <TitleName>模特儿</TitleName>
+  <Desc>模特儿</Desc>
+  <AbFileName>s9.ab</AbFileName>
+  <ObjName>s9-UnityChan</ObjName>
+  <AbPicFileName>s9.jpg</AbPicFileName> 
+  </AB>
+
+</Abs>
